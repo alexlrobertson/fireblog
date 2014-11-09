@@ -1,0 +1,9 @@
+<h1>New Post</h1>
+
+<form name="newPost" ng-submit="post.addPost(newPost.$valid, data)">
+  <input type="text" name="title" ng-model="data.title">
+  <textarea id="content" name="content"
+    cols="30" rows="10"
+    ng-model="data.content"></textarea>
+  <button type="submit">Create</button>
+</form>
