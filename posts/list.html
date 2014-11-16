@@ -1,13 +1,15 @@
-<h1>Posts</h1>
+<div class="container">
+  <h1>Posts</h1>
 
-<a ui-sref="posts.new">New Post</a>
+  <a ui-sref="posts.new">New Post</a>
 
-<ul class="post-list">
-  <li class="post-list-item"
-    ng-repeat="(index, postData) in post.posts">
-    <h2>
-      <a ui-sref="posts.detail({key: post.posts.$keyAt(index)})"
-        ng-bind="postData.title"></a>
-    </h2>
-  </li>
-</ul>
+  <ul class="post-list">
+    <li class="post-list-item"
+      ng-repeat="(index, postData) in post.posts">
+      <h2>
+        <a ui-sref="posts.detail({key: post.posts.$keyAt(index)})"
+          ng-bind="postData.title"></a>
+      </h2>
+    </li>
+  </ul>
+</div>
