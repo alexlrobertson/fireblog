@@ -3,13 +3,13 @@
 
   <a ui-sref="posts.new">New Post</a>
 
-  <ul class="post-list">
-    <li class="post-list-item"
+  <div class="post-list">
+    <div class="post-list-item"
       ng-repeat="(index, postData) in post.posts">
       <h2>
         <a ui-sref="posts.detail({key: post.posts.$keyAt(index)})"
           ng-bind="postData.title"></a>
       </h2>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>
