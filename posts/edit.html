@@ -1,12 +1,6 @@
 <div class="container">
   <h1>Edit Post</h1>
 
-  <button
-    class="btn btn-danger"
-    ng-click="postEditor.destroy()">
-    Destroy
-  </button>
-
   <form name="editPost"
     class="form"
     ng-submit="postEditor.update(editPost.$valid, data)">

@@ -1,3 +1,11 @@
+function PostEditCtrl(postData, $state) {
+  this.postData = postData;
+}
+
+PostEditCtrl.prototype.update = function () {
+  this.postData.$save();
+};
+
 angular.module("fireblog")
   .constant("firebaseUrl", "https://amber-fire-1284.firebaseio.com/posts")
   .factory(
@@ -75,18 +83,7 @@ angular.module("fireblog")
         templateUrl: "posts/edit.html"
       });
   })
-  .controller("PostEditCtrl", function (postData, $state) {
-    this.postData = postData;
-
-    this.update = function () {
-      this.postData.$save();
-    };
-
-    this.destroy = function () {
-      this.postData.$destroy();
-      $state.go('posts.list');
-    };
-  })
+  .controller("PostEditCtrl", PostEditCtrl)
   .controller("PostDetailCtrl", function (postData, $stateParams) {
     this.postData = postData;
     this.key = $stateParams.key;

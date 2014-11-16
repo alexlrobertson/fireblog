@@ -2,7 +2,7 @@
   <h1>New Post</h1>
 
   <form name="newPost"
-    class="form"
+    class="form col-md-6"
     ng-submit="post.addPost(newPost.$valid, data)">
     <div class="form-group">
       <label for="title">Title</label>
@@ -21,4 +21,9 @@
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
   </form>
+
+  <div class="col-md-6">
+    <div class="h1" ng-bind-html="data.title"></div>
+    <markdown content="data.content"></markdown>
+  </div>
 </div>
